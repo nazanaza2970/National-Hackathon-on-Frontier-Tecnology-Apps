@@ -1,0 +1,131 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(
+  home: managers_App(),
+));
+
+// ignore: camel_case_types
+class managers_App extends StatefulWidget {
+  @override
+  _managers_AppState createState() => _managers_AppState();
+}
+
+class _managers_AppState extends State<managers_App> {
+  @override
+  bool isButtonPressed1=true;
+  bool isButtonPressed2=true;
+  bool isButtonPressed3=true;
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Inspector's App"),
+        centerTitle: true,
+      ),
+      body:
+          ListView(
+            children: <Widget>[
+             Container(
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.all(20),
+              color: Colors.grey[200],
+              child: Column(
+                children: <Widget>[
+                  CircleAvatar(
+                    backgroundImage: AssetImage('assets/a2i-Logo.jpg'),
+                    radius:30.0,
+                  ),
+                  Text('Company one Name'),
+                  Text('Data:'),
+                  RaisedButton(onPressed:(){},
+                    child: Text('Certificate Information'),
+                  ),
+
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: RaisedButton(
+                      color: isButtonPressed1? Colors.green:Colors.red,
+                      onPressed: (){
+                        setState((){
+                          isButtonPressed1 =!isButtonPressed1;
+                        });
+                        print("Warning sent");
+                      },
+                      child: Text('Warn'),
+                    ),
+                  ),
+
+                ],
+              ),
+            ),
+              Container(
+                padding: EdgeInsets.all(20),
+                margin: EdgeInsets.all(20),
+                color: Colors.grey[200],
+                child: Column(
+                  children: <Widget>[
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/logo2.png'),
+                      radius:30.0,
+                    ),
+                    Text('Company two Name'),
+                    Text('Data:'),
+                    RaisedButton(onPressed:(){},
+                      child: Text('Certificate Information'),
+                    ),
+
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: RaisedButton(
+                        color: isButtonPressed2? Colors.green:Colors.red,
+                        onPressed: (){
+                          setState((){
+                            isButtonPressed2 =!isButtonPressed2;
+                          });
+                          print("Warning sent");
+                        },
+                        child: Text('Warn'),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(20),
+                margin: EdgeInsets.all(20),
+                color: Colors.grey[200],
+                child: Column(
+                  children: <Widget>[
+                    CircleAvatar(
+                      backgroundImage: AssetImage('assets/company_sample.png'),
+                      radius:30.0,
+                    ),
+                    Text('Company three Name'),
+                    Text('Data:'),
+                    RaisedButton(onPressed:(){},
+                      child: Text('Certificate Information'),
+                    ),
+
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: RaisedButton(
+                        color: isButtonPressed3? Colors.green:Colors.red,
+                        onPressed: (){
+                          setState((){
+                            isButtonPressed3 =!isButtonPressed3;
+                          });
+                          print("Warning sent");
+                        },
+                        child: Text('Warn'),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+            ],
+          ),
+
+    );
+  }
+}
